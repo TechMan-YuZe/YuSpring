@@ -14,9 +14,24 @@ import java.util.concurrent.ConcurrentMap;
  */
 public class ApplicationContext {
 
+    /**
+     * 待扫描的类
+     */
     private Class configClass;
+
+    /**
+     * beanDefinition 的集合
+     */
     private ConcurrentMap<String, BeanDefinition> beanDefinitionMap = new ConcurrentHashMap<>();
+
+    /**
+     * 单例池
+     */
     private ConcurrentMap<String, Object> singletonObjects = new ConcurrentHashMap<>();
+
+    /**
+     * BeanPostProcessor（后置处理器列表）
+     */
     private ArrayList<BeanPostProcessor> beanPostProcessors = new ArrayList<>();
 
     /**
